@@ -1,0 +1,71 @@
+namespace Homework4;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Question 1");
+        Console.Write("enter first number: ");
+        int a = int.Parse(Console.ReadLine());
+
+        Console.Write("enter second number: ");
+        int b = int.Parse(Console.ReadLine());
+
+        int result = GetLargest(a, b);
+        Console.WriteLine("a=" + a + "; b=" + b);
+        Console.WriteLine("The largest number is: " + result);
+
+        //q2
+        Console.WriteLine("Question 2");
+        Console.Write("Enter a number: " );
+        int n = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter Left or RIght : " );
+        string choice = Console.ReadLine();
+
+        //call q2
+        PrintTriangle( n, choice);
+
+        Console.ReadLine();
+
+    }
+    static int GetLargest(int num1, int num2) //q1method
+    {
+        if (num1 > num2)
+        {
+            return num1;
+        }
+        else
+        {
+            return num2;
+        }
+    }
+    static void PrintTriangle(int n, string shape) //q2method
+    {
+        Console.WriteLine("Value: N is " + n + " ; Shape is " +shape);
+        {
+            for(int i = 1; i <= n; i++)
+            {
+                if (shape == "left")
+                {
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                }
+             else if(shape == "right")
+            {
+                for (int j = 1; j <=n - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write("*");
+                }
+            }
+            Console.WriteLine();
+        }
+    }
+}
+}
