@@ -3,3 +3,4 @@
 2/2/26: Adding Homework2.cs
 2/9/26: Adding Homework3.cs
 2/16/26: adding Homework4.cs
+3/9/26: adding Homework6.cs
