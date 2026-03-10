@@ -1,0 +1,103 @@
+namespace Homework6;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+             // Q1: Professor data
+            Professor profAlice = new Professor("Alice", "Java");
+            profAlice.SetSalary(9000.0);
+
+            Professor profBob = new Professor("Bob", "Math");
+            profBob.SetSalary(8000.0);
+
+            // Q1: stuent data
+            Student studentLisa = new Student("Lisa", "Java");
+            studentLisa.SetGrade(90.0);
+
+            Student studentTom = new Student("Tom", "Math");
+            studentTom.SetGrade(80.0);
+
+            // Q2: Print professor
+            Console.WriteLine("Professor " + profAlice.ProfName +
+                              " teaches " + profAlice.ClassTeach +
+                              ", and the salary is: " + profAlice.GetSalary());
+
+            Console.WriteLine("Professor " + profBob.ProfName +
+                              " teaches " + profBob.ClassTeach +
+                              ", and the salary is: " + profBob.GetSalary());
+
+            Console.WriteLine();
+
+            // Q2: Print student
+            Console.WriteLine("Student " + studentLisa.StudentName +
+                              " enrolls " + studentLisa.ClassEnroll +
+                              ", and the grade is: " + studentLisa.GetGrade());
+
+            Console.WriteLine("Student " + studentTom.StudentName +
+                              " enrolls " + studentTom.ClassEnroll +
+                              ", and the grade is: " + studentTom.GetGrade());
+
+            Console.WriteLine();
+
+            // Q2: Salary difference
+            double salaryDifference = profAlice.GetSalary() - profBob.GetSalary();
+            Console.WriteLine("The salary difference between " +
+                              profAlice.ProfName + " and " +
+                              profBob.ProfName + " is: " + salaryDifference);
+
+            // Q2: Total grade
+            double totalGrade = studentLisa.GetGrade() + studentTom.GetGrade();
+            Console.WriteLine("The total grade for Lisa and Tom is: " + totalGrade);
+        }
+    }
+
+    class Professor
+    {
+        private double salary;
+
+        public string ProfName { get; }
+        public string ClassTeach { get; }
+
+        public Professor(string profName, string classTeach)
+        {
+            ProfName = profName;
+            ClassTeach = classTeach;
+            salary = 0.0;
+        }
+
+        public void SetSalary(double salary_amount)
+        {
+            salary = salary_amount;
+        }
+
+        public double GetSalary()
+        {
+            return salary;
+        }
+    }
+
+    class Student
+    {
+        private double studentGrade;
+
+        public string StudentName { get; }
+        public string ClassEnroll { get; }
+
+        public Student(string studentName, string classEnroll)
+        {
+            StudentName = studentName;
+            ClassEnroll = classEnroll;
+            studentGrade = 0.0;
+        }
+
+        public void SetGrade(double newGrade)
+        {
+            studentGrade = newGrade;
+        }
+
+        public double GetGrade()
+        {
+            return studentGrade;
+        }
+    }
